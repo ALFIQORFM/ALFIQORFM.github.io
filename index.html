@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>website alfiqkelin</title>
+    <meta name="description" content="Free open source Tailwind CSS Store template">
+    <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic">
+    
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+	
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
+
+    <style>
+        .work-sans {
+            font-family: 'Work Sans', sans-serif;
+        }
+                
+        #menu-toggle:checked + #menu {
+            display: block;
+        }
+        
+        .hover\:grow {
+            transition: all 0.3s;
+            transform: scale(1);
+        }
+        
+        .hover\:grow:hover {
+            transform: scale(1.02);
+        }
+        
+        .carousel-open:checked + .carousel-item {
+            position: static;
+            opacity: 100;
+        }
+        
+        .carousel-item {
+            -webkit-transition: opacity 0.6s ease-out;
+            transition: opacity 0.6s ease-out;
+        }
+        
+        #carousel-1:checked ~ .control-1,
+        #carousel-2:checked ~ .control-2,
+        #carousel-3:checked ~ .control-3 {
+            display: block;
+        }
+        
+        .carousel-indicators {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            bottom: 2%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+        #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+        #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+            color: #000;
+            /*Set to match the Tailwind colour you want the active one to be */
+        }
+    </style>
+
+</head>
+
+<body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
+
+    <!--Nav-->
+    <nav id="header" class="w-full z-30 top-0 py-1">
+        <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
+
+            <label for="menu-toggle" class="cursor-pointer md:hidden block">
+                <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <title>menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                </svg>
+            </label>
+            <input class="hidden" type="checkbox" id="menu-toggle" />
+
+            <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
+                <nav>
+                    <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
+                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#">Shop</a></li>
+                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="order-1 md:order-2">
+                <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
+                    <svg class="fill-current text-gray-800 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="" />
+                    </svg>
+                    PTP
+                </a>
+            </div>
+
+            <div class="order-2 md:order-3 flex items-center" id="nav-content">
+
+                <a class="inline-block no-underline hover:text-black" href="#">
+                    <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <circle fill="none" cx="12" cy="7" r="3" />
+                        <path d="" />
+                    </svg>
+                </a>
+
+                <a class="pl-3 inline-block no-underline hover:text-black" href="#">
+                    <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="" />
+                        <circle cx="10.5" cy="18.5" r="1.5" />
+                        <circle cx="17.5" cy="18.5" r="1.5" />
+                    </svg>
+                </a>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="carousel relative container mx-auto" style="max-width:1600px;">
+        <div class="carousel-inner relative overflow-hidden w-full">
+            <!--Slide 1-->
+            <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+            <div class="carousel-item absolute opacity-0" style="height:50vh;">
+                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('FOTO1.jpeg');">
+
+                    <div class="container mx-auto">
+                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
+                            <p class="text-black text-2xl my-4">ALFIQO R.F.M</p>
+                            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="https://api.whatsapp.com/send/?phone=083109679747&text&type=phone_number&app_absent=0" target="_blank">HUBUNGI</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+            <label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+            <!--Slide 2-->
+            <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+            <div class="carousel-item absolute opacity-0 bg-cover bg-right" style="height:50vh;">
+                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('gunung1.jpeg');">
+
+                    <div class="container mx-auto">
+                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
+                            <p class="text-black text-2xl my-4">HALLO BG</p>
+                            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="">JANGAN LUPA FOLLOW</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+            <label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+            <!--Slide 3-->
+            <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+            <div class="carousel-item absolute opacity-0" style="height:50vh;">
+                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-bottom" style="background-image: url('pantai1.jpeg');">
+
+                    <div class="container mx-auto">
+                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
+                            <p class="text-black text-2xl my-4">WALAWE OYY</p>
+                            <a class="text-xl inline-block no-underline border-b border-gray-900 leading-relaxed hover:text-black hover:border-black" href="#">ENJOY YOUR LIFE</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+            <label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+            <!-- Add additional indicators for each slide-->
+            <ol class="carousel-indicators">
+                <li class="inline-block mr-3">
+                    <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
+                </li>
+                <li class="inline-block mr-3">
+                    <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
+                </li>
+                <li class="inline-block mr-3">
+                    <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
+                </li>
+            </ol>
+
+        </div>
+    </div>
+
+    <!--	 
+
+Alternatively if you want to just have a single hero
+
+<section class="w-full mx-auto bg-nordic-gray-light flex pt-12 md:pt-0 md:items-center bg-cover bg-right" style="max-width:1600px; height: 32rem; background-image: url('https://images.unsplash.com/photo-1422190441165-ec2956dc9ecc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80');">
+
+	<div class="container mx-auto">
+
+		<div class="flex flex-col w-full lg:w-1/2 justify-center items-start  px-6 tracking-wide">
+			<h1 class="text-black text-2xl my-4">Stripy Zig Zag Jigsaw Pillow and Duvet Set</h1>
+			<a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">products</a>
+
+		</div>
+
+	  </div>
+
+</section>
+
+-->
+
+    <section class="bg-white py-8">
+
+        <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
+
+            <nav id="store" class="w-full z-30 top-0 px-6 py-1">
+                <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
+
+                    <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="">
+				PROFIL
+			</a>
+
+                    <div class="flex items-center" id="store-nav-content">
+
+                        <a class="pl-3 inline-block no-underline hover:text-black" href="#">
+                            <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M7 11H17V13H7zM4 7H20V9H4zM10 15H14V17H10z" />
+                            </svg>
+                        </a>
+
+                        <a class="pl-3 inline-block no-underline hover:text-black" href="#">
+                            <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z" />
+                            </svg>
+                        </a>
+
+                    </div>
+              </div>
+            </nav>
+
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="foto2.jpeg" width="200" height="300">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="text-black text-2xl my-4">WHO AM I?</p>
+                        <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        </svg>
+                    </div>
+                    <p class="pt-1 text-gray-900">Saya Al manusia biasa yang makan nasi</p>
+                </a>
+            </div>
+
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d412.3027802918203!2d110.34931647278354!3d-7.902194399947656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a550076084861%3A0xa5cb2bc06dad2488!2sDealer%20Handal%20water%20heater!5e1!3m2!1sid!2sid!4v1724479156816!5m2!1sid!2sid" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="text-black text-2xl my-4">ALAMAT</p>
+                        <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+                        </svg>
+                    </div>
+                    <p class="pt-1 text-gray-900">DIY,Bantul,Bantul,Manding,RT07</p>
+                </a>
+            </div>
+
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="data:image/jpeg;base64,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" width="300" height="200">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="text-black text-2xl my-4">AKUN2 MEDSOS</p>
+                        <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+                        </svg>
+                    </div>
+                    <p class="pt-1 text-gray-900" ><a href="">ig=02kelinci02</a><br><a href="https://api.whatsapp.com/send/?phone=083109679747&text&type=phone_number&app_absent=0" target="_blank">whatsapp=CLICK HERE</a><BR>TIKTOK=@02kelinci_02
+                    </p>
+                </a>
+            </div>
+
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="musaba masjid.jpeg" width="200" height="200">
+                    <img class="hover:grow hover:shadow-lg" src="musaba atas.jpeg" width="200" height="200">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="text-black text-2xl my-4">SEKOLAH</p>
+                        <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        
+                        </svg>
+                    </div>
+                    <p class="pt-1 text-gray-900"><a href="https://lms.smkmuh1bantul.sch.id/" target="_blank">MUSABA</a></p>
+                </a>
+            </div>
+    </section>
+    <section class="bg-white py-8">
+
+        <div class="container py-8 px-6 mx-auto">
+
+            <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mb-8" href="#">
+			About
+		</a>
+
+            <p class="mt-8 mb-8">This template is inspired by the stunning nordic minimalist design - in particular:
+                <br>
+                <a class="text-gray-800 underline hover:text-gray-900" href="http://savoy.nordicmade.com/" target="_blank">Savoy Theme</a> created by <a class="text-gray-800 underline hover:text-gray-900" href="https://nordicmade.com/">https://nordicmade.com/</a> and <a class="text-gray-800 underline hover:text-gray-900" href="https://www.metricdesign.no/" target="_blank">https://www.metricdesign.no/</a></p>
+
+            <p class="mb-8">Lorem ipsum dolor sit amet, consectetur <a href="#">random link</a> adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Vitae aliquet nec ullamcorper sit. Nullam eget felis eget nunc lobortis mattis aliquam. In est ante in nibh mauris. Egestas congue quisque egestas diam in. Facilisi nullam vehicula ipsum a arcu. Nec nam aliquam sem et tortor consequat. Eget mi proin sed libero enim sed faucibus turpis in. Hac habitasse platea dictumst quisque. In aliquam sem fringilla ut. Gravida rutrum quisque non tellus orci ac auctor augue mauris. Accumsan lacus vel facilisis volutpat est velit egestas dui id. At tempor commodo ullamcorper a. Volutpat commodo sed egestas egestas fringilla. Vitae congue eu consequat ac.</p>
+
+        </div>
+
+    </section>
+
+<footer class="container mx-auto bg-white py-8 border-t border-gray-400">
+  <div class="container flex px-3 py-8 ">
+    <div class="w-full mx-auto flex flex-wrap">
+      <div class="flex w-full lg:w-1/2 ">
+        <div class="px-3 md:px-0">
+          <h3 class="font-bold text-gray-900">About</h3>
+          <p class="py-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel mi ut felis tempus commodo nec id erat. Suspendisse consectetur dapibus velit ut lacinia.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+
+</html>
